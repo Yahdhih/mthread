@@ -18,11 +18,11 @@
 
 **Espace de réponse :**
 ```
-1.
-2.
-3.
-4.
-5.
+1.vrai
+2.faux
+3.vrai
+4.vrai
+5.faux
 ```
 
 ---
