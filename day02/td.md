@@ -61,7 +61,7 @@ Situation C :
 ```
 a) Dans le modèle **1:1** (kernel thread), si T1 fait un appel système bloquant, T2 n'est pas effecté et continue son travail puisque les deux threads sont indépendants.
 
-b) Dans le modèle **N:1**, lorsqu'un thread fait un appel système bloquant, tout l'ensemble des thread s'arrête sauf au cas ou faix un yield() et on laisse es autres threads travail.
+b) Dans le modèle **N:1**, lorsqu'un thread fait un appel système bloquant, tout l'ensemble des thread s'arrête sauf au cas ou faix un yield() et on laisse les autres threads travail.
 
 c) Avec `pthread` le modèle utilisé est le modèle **1:1**
 
@@ -89,11 +89,11 @@ Un serveur web reçoit 1000 requêtes simultanées. Pour chaque requête, il lit
 
 **Espace de réponse :**
 ```
-a)
+a) Utiliser les threads est plus rapide qu'un seule processus séquentielle 
 
-b)
+b) Le modèle **N:1** ne résoud pas le problème, car si un prcessus bloque tous bloquent!
 
-c)
+c) Le meilleur alternative est Epoll(event-driven)( i will dive into it later)
 ```
 
 ---
