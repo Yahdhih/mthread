@@ -25,7 +25,7 @@ Situation A :
   C1: `[T1][T2][T3][T4][T1][T2][T3][T4]` 
 
 Situation B :
-  Parallélisme ?
+  Parallélisme 
   Max simultané : 4
   Diagramme :
   t=0 1 2 3 4 5 6 7
@@ -59,18 +59,18 @@ Situation C :
 
 **Espace de réponse :**
 ```
-a)
+a) Dans le modèle **1:1** (kernel thread), si T1 fait un appel système bloquant, T2 n'est pas effecté et continue son travail puisque les deux threads sont indépendants.
 
-b)
+b) Dans le modèle **N:1**, lorsqu'un thread fait un appel système bloquant, tout l'ensemble des thread s'arrête sauf au cas ou faix un yield() et on laisse es autres threads travail.
 
-c)
+c) Avec `pthread` le modèle utilisé est le modèle **1:1**
 
 d) Avantages :
-   1.
-   2.
+   1.très léger
+   2.pas d'appel système
    Inconvénients :
-   1.
-   2.
+   1.pas de vrai parallèlisme
+   2.si un thread bloque, tous bloquent
 ```
 
 ---
