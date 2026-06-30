@@ -76,7 +76,9 @@ D →
 
 b) Non `locale` a la même valeur pour les deux threads, il peut avoir deux valeur différent si on crée deux `worker()` différent, mais comment on a le meme `worker()`, la valeur de `locale`  dans le `worker()` ne change pas. 
 
-c) 
+**NB :** Ma réponse est fausse et la cause pour laquelle j'ai malle répondu est ma vision de "valeur". Le point à voir ici est le fait que locale est une entité différente pour chaque thread.
+
+c) T2 lit aussi 100, les variables globales sont partagées!
 ```
 
 ---
