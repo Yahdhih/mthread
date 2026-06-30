@@ -18,17 +18,29 @@ Pour chaque situation :
 **Espace de réponse :**
 ```
 Situation A :
-  Parallélisme ?   Concurrence ?
-  Max simultané :
+ Concurrence 
+  Max simultané : 1
   Diagramme :
   t=0 1 2 3 4 5 6 7
-  C1: 
+  C1: `[T1][T2][T3][T4][T1][T2][T3][T4]` 
 
 Situation B :
-  ...
+  Parallélisme ?
+  Max simultané : 4
+  Diagramme :
+  t=0 1 2 3 4 5 6 7
+  C1: `[T1][T1][T1][T1][T1][T1][T1][T1]`
+      `[T2][T2][T2][T2][T2][T2][T2][T2]`
+      `[T3][T3][T3][T3][T3][T3][T3][T3]`
+      `[T4][T4][T4][T4][T4][T4][T4][T4]`
 
 Situation C :
-  ...
+  Parallélisme et Concurrence 
+  Max simultané : 2
+  Diagramme :
+  t=0 1 2 3 4 5 6 7
+  C1: `[T1][T1][T1][T1][T2][T2][T2][T2]`
+      `[T3][3][T3][T3][T4][T4][T4][T4]`
 ```
 
 ---
