@@ -51,11 +51,13 @@ int main() {
 
 | Variable       | Segment mémoire | Partagée entre les 2 threads ? |
 |----------------|-----------------|-------------------------------|
-| A (globale)    |                 |                               |
-| B (locale)     |                 |                               |
-| C (pointeur)   |                 |                               |
-| *heap (valeur) |                 |                               |
-| D (main_locale)|                 |                               |
+| A (globale)    | .data (données BSS)  |oui                            |
+| B (locale)     |  stack               |non                            |
+| C (pointeur)   |  stack               |non                            |
+| *heap (valeur) |  heap                |non                            |
+| D (main_locale)|  stack               |non                            |
+
+**NB :** La Heap est partagés entre les threads
 
 **b)** Les deux threads exécutent `worker()` simultanément. Peuvent-ils avoir deux valeurs **différentes** pour `locale` ? Pourquoi ?
 
@@ -65,16 +67,16 @@ int main() {
 
 **Espace de réponse :**
 ```
-a)
+a) voir le tableau
 A →
 B →
 C →
 *heap →
 D →
 
-b)
+b) Non `locale` a la même valeur pour les deux threads, il peut avoir deux valeur différent si on crée deux `worker()` différent, mais comment on a le meme `worker()`, la valeur de `locale`  dans le `worker()` ne change pas. 
 
-c)
+c) 
 ```
 
 ---
