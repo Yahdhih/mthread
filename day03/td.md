@@ -65,7 +65,22 @@ Bas de pile (adresses hautes)
 **Ta réponse ici :**
 
 ```
-[espace de réponse]
+Sommet de pile (adresses basses)
+┌──────────────────────────────┐
+│  z = 16                      │  ← frame de c()
+│  adresse retour → b+offset   │
+├──────────────────────────────┤
+│  y = 6                       │  ← frame de b()
+│  adresse retour → a+offset   │
+├──────────────────────────────┤
+│  x = 3                       │  ← frame de a()
+│  adresse retour → main+offset│
+├──────────────────────────────┤
+│  (variables locales de main) │  ← frame de main()
+│  adresse retour → _start     │
+└──────────────────────────────┘
+Bas de pile (adresses hautes)
+
 ```
 
 ---
