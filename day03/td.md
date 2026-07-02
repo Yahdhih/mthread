@@ -90,7 +90,10 @@ Bas de pile (adresses hautes)
 Qu'affiche exactement le programme ? Écris la sortie ligne par ligne.
 
 ```
-[espace de réponse]
+dans a, x = 3
+dans b, y = 6
+dans c, z = 16
+
 ```
 
 ---
