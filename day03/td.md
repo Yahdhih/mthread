@@ -103,7 +103,18 @@ dans c, z = 16
 Lorsque `c` se termine et que `b` reprend l'exécution au point d'observation B-retour, que contient la pile ? Le cadre de `c` est-il encore là ?
 
 ```
-[espace de réponse]
+Quand c retourne, son cadre est dépilé (rsp avance vers les adresses hautes). La mémoire n'est pas effacée mais considérée comme libre.
+
+Au point B-retour, la pile contient :
+┌──────────────────────────────┐
+│  y = 6                       │  ← frame de b() (de nouveau au sommet)
+│  adresse retour → a+offset   │
+├──────────────────────────────┤
+│  x = 3                       │  ← frame de a()
+└──────────────────────────────┘
+
+Le cadre de c est gone du point de vue du programme. Accéder à une variable locale de c depuis b serait un comportement indéfini.
+
 ```
 
 ---
