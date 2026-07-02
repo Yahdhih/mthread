@@ -124,7 +124,10 @@ Le cadre de c est gone du point de vue du programme. Accéder à une variable lo
 Si `c` appelait `malloc(100)`, où est allouée la mémoire ? Est-ce sur la pile ? Que se passe-t-il si on ne fait pas `free` avant de retourner de `c` ?
 
 ```
-[espace de réponse]
+malloc(100) alloue sur le tas (heap), pas sur la pile. Le pointeur retourné est stocké dans une variable locale (sur la pile), mais les 100 octets sont sur le tas.
+
+Si on ne fait pas free avant de retourner de c : la variable locale contenant le pointeur est perdue (frame dépilé), mais les 100 octets du tas restent alloués. C'est une fuite mémoire (memory leak) — le programme continue de fonctionner, mais cette mémoire ne sera jamais libérée avant la fin du processus.
+
 ```
 
 ---
